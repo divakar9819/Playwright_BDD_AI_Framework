@@ -1,12 +1,18 @@
+
 import "dotenv/config";
 
-export const config = {
-  baseUrl: process.env.BASE_URL ?? "http://127.0.0.1:4173",
-  browserName: process.env.BROWSER ?? "chromium",
-  headless: (process.env.HEADLESS ?? "true").toLowerCase() !== "false",
-  defaultTimeoutMs: Number(process.env.DEFAULT_TIMEOUT_MS ?? 10_000)
-} as const;
+function readBoolean(
+  value: string | undefined,
+  fallback: boolean
+): boolean {
+  if (value === undefined || value.trim() === "") {
+    return fallback;
+  }
 
-if (!Number.isFinite(config.defaultTimeoutMs) || config.defaultTimeoutMs <= 0) {
-  throw new Error("DEFAULT_TIMEOUT_MS must be a positive number.");
+  return value.toLowerCase() === "true";
 }
+
+export const config = {
+  baseUrl: process.env.BASE_URL || "http://127.0.0.1:4173",
+  headless: readBoolean(process.env.HEADLESS, true)
+};

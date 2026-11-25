@@ -1,8 +1,11 @@
+
 node_modules/
 dist/
-reports/*
-!reports/.gitkeep
-artifacts/*
-!artifacts/.gitkeep
 .env
 *.log
+
+reports/*
+!reports/.gitkeep
+
+artifacts/*
+!artifacts/.gitkeep
