@@ -1,0 +1,26 @@
+{
+  "name": "playwright-bdd-ai-framework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-oriented Playwright + Cucumber BDD starter with a local demo app",
+  "scripts": {
+    "demo": "tsx demo/server.ts",
+    "test": "cucumber-js",
+    "test:headed": "cross-env HEADLESS=false cucumber-js",
+    "test:login": "cucumber-js --tags @login",
+    "typecheck": "tsc --noEmit",
+    "clean": "tsx scripts/clean.ts"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.30",
+    "cross-env": "^7.0.3",
+    "express": "^5.1.0",
+    "playwright": "^1.55.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "dotenv": "^16.6.1"
+  }
+}
