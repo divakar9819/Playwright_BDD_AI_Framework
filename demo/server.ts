@@ -44,10 +44,10 @@ app.get("/login", (_req, res) => {
       const email = document.querySelector("#email").value;
       const password = document.querySelector("#password").value;
       if (email === "qa.user@example.com" && password === "Password123!") {
-        message.textContent = "Welcome back!";
+        message.textContent = "Welcome, QA User!";
         message.dataset.status = "success";
       } else {
-        message.textContent = "Invalid email or password.";
+        message.textContent = "Invalid email or password";
         message.dataset.status = "error";
       }
     });
